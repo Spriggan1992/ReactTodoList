@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
+import { useLockalStorageState } from '../hooks/useLockalStorageState'
 import { v4 as uuidv4 } from 'uuid';
+
 export default initialTodos => {
-    const [todos, setTodos] = useState(initialTodos)
+    const [todos, setTodos] = useLockalStorageState("todos", initialTodos)
 
     return {
         todos,
